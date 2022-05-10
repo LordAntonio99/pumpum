@@ -26,7 +26,7 @@ const Featured = ({ type }) => {
     console.log(featured);
   }, []);
   return (
-    <div className="w-screen h-[70vh] relative">
+    <div className="w-screen h-[90vh] relative">
       <video
         src={featured.trailer}
         className="w-screen h-full object-cover"
@@ -34,7 +34,7 @@ const Featured = ({ type }) => {
         muted
         loop
       ></video>
-      <div className="absolute top-0 translate-y-[50%] left-8 hover:bg-black/30 hover:scale-105 p-4 rounded-lg transition-all duration-150">
+      <div className="absolute bottom-8 left-8 hover:bg-black/30 hover:scale-105 p-4 rounded-lg transition-all duration-150">
         <h1 className="text-4xl font-bold max-w-[40vw] text-white/90">
           {featured.title}
         </h1>

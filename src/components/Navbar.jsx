@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ menu, activeMenu }) => {
   return (
@@ -11,16 +12,29 @@ const Navbar = ({ menu, activeMenu }) => {
         />
         {activeMenu && (
           <div className="flex flex-row text-white text-sm ml-11 space-x-4">
-            <h1 className={menu === "home" ? "menu_text--active" : "menu_text"}>
-              Home
-            </h1>
-            <h1 className="menu_text">Animes</h1>
-            <h1 className="menu_text">Movies</h1>
+            <Link to="/">
+              <h1
+                className={menu === "home" ? "menu_text--active" : "menu_text"}
+              >
+                Home
+              </h1>
+            </Link>
+
+            <Link to="/animes">
+              <h1 className={menu === "animes" ? "menu_text--active" : "menu_text"}>Animes</h1>
+            </Link>
+            <Link to="/movies">
+              <h1 className={menu === "movies" ? "menu_text--active" : "menu_text"}>Movies</h1>
+            </Link>
           </div>
         )}
       </div>
       <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" className="h-6 w-6" alt="" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          className="h-6 w-6"
+          alt=""
+        />
       </div>
     </div>
   );
