@@ -24,7 +24,7 @@ const Movies = () => {
   }, []);
   console.log(movies);
   return (
-    <div className="w-full bg-zinc-900 overflow-hidden">
+    <div className="w-full min-h-screen bg-zinc-900 overflow-hidden">
       <Navbar activeMenu={true} menu="movies" />
       <div className="w-screen h-full bg-zinc-900">
         <h1 className="text-white font-semibold text-4xl py-4 px-8">Movies</h1>

@@ -38,8 +38,8 @@ const Featured = ({ type }) => {
         <h1 className="text-4xl font-bold max-w-[40vw] text-white/90">
           {featured.title}
         </h1>
-        <h1 className="text-2xl max-w-[40vw] text-white/80 font-semibold mb-4">{featured.desc}</h1>
-        <div className="flex flex-row items-center justify-start space-x-4">
+        <h1 className="text-2xl max-w-[40vw] scrollbar-none max-h-0 overflow-x-scroll text-white/80 font-semibold mb-4 invisible md:visible md:max-h-52">{featured.desc}</h1>
+        <div className="flex flex-col md:flex-row items-center justify-start space-y-4 md:space-x-4">
           <button className="bg-white/90 py-2 rounded-lg text-2xl font-bold w-64 flex flex-row items-center justify-center hover:scale-110 transition-all duration-100">
             <BsPlayFill className="h-8 w-8 pt-1"/> Play
           </button>
