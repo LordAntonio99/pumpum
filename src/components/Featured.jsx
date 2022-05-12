@@ -26,7 +26,7 @@ const Featured = ({ type }) => {
     console.log(featured);
   }, []);
   return (
-    <div className="w-screen h-[90vh] relative">
+    <div className="w-screen h-[90vh] bg-black relative">
       <video
         src={featured.trailer}
         className="w-screen h-full object-cover"
