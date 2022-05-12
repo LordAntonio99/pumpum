@@ -23,7 +23,7 @@ const Season = ({ seasonId, serie }) => {
       }
     };
     getSeasonInfo();
-  }, []);
+  }, [seasonId]);
   console.log(season);
   return (
     <div className="w-full md:w-[60vw] md:ml-8 mt-8 bg-black rounded-lg">
@@ -37,7 +37,7 @@ const Season = ({ seasonId, serie }) => {
       </div>
       <div className="flex flex-col space-y-4 justify-center items-center pb-4">
       {season.episodes?.map((ep) => (
-        <Episode episodeId={ep} serie={serie} />
+        <Episode episodeId={ep} serie={serie} season={season} />
       ))}
       </div>
     </div>

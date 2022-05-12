@@ -24,7 +24,7 @@ const Featured = ({ type }) => {
     };
     getFeatured();
     console.log(featured);
-  }, []);
+  }, [featured, type]);
   return (
     <div className="w-screen h-[90vh] bg-black relative">
       <video

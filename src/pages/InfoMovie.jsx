@@ -1,11 +1,11 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const InfoMovie = () => {
   const params = useLocation();
   const movie = params.state.movie
-  console.log(movie);
+  document.title = movie.title + " - Pumpum"
   return (
     <div className="w-screen h-screen overflow-hidden">
       <Navbar activeMenu={true} menu="movies" />

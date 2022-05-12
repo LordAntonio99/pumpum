@@ -7,6 +7,7 @@ import Season from "../components/Season";
 const InfoAnime = () => {
   const location = useLocation();
   const serie = location.state.serie;
+  document.title = serie.title + " - Pumpum"
   console.log(serie);
   return (
     <div className="min-h-screen bg-zinc-900 overflow-x-hidden">
@@ -18,7 +19,7 @@ const InfoAnime = () => {
             {serie?.title}
           </h1>
           {serie?.seasons?.map((season) => (
-            <Season seasonId={season} serie={serie}/>
+            <Season seasonId={season} serie={serie} season={season} />
           ))}
         </div>
       </div>

@@ -22,7 +22,7 @@ const Login = () => {
       />
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-96 bg-white/60 shadow-xl shadow-black/40 rounded-lg p-8">
         <div className="flex flex-col items-center justify-center">
-          <img src="https://api-doc.pumpum.info/slate/img/logo.png" className="animate-bounce"/>
+          <img src="https://api-doc.pumpum.info/slate/img/logo.png" alt="Pumpum logo" className="animate-bounce"/>
           <h1 className="text-xl mb-4">Sign in to your account</h1>
           <input
             type="text"

@@ -6,6 +6,7 @@ import Serie from "../components/Serie";
 
 const Animes = () => {
   const [series, setSeries] = useState([]);
+  document.title = "Animes - Pumpum"
   useEffect(() => {
     const getSeries = async () => {
       try {
