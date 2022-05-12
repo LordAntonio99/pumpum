@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
-import Movie from "../components/Movie";
 import Navbar from "../components/Navbar";
+import Serie from "../components/Serie";
 
 const Animes = () => {
   const [series, setSeries] = useState([]);
@@ -22,7 +22,7 @@ const Animes = () => {
     };
     getSeries();
 }, []);
-console.log(series);
+
   return (
     <div className="w-full bg-black overflow-hidden">
       <Navbar activeMenu={true} menu="animes" />
@@ -31,7 +31,7 @@ console.log(series);
         <div className="w-screen grid justify-center items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-4 gap-4">
           {
             series.map((serie) => (
-                <Movie data={serie} />
+                <Serie data={serie} key={serie._id} />
             ))
           }
         </div>
