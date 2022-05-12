@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsPlayFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Episode = ({ episodeId }) => {
   const [episode, setEpisode] = useState({});
@@ -42,9 +43,12 @@ const Episode = ({ episodeId }) => {
           blanditiis tenetur autem, quos nam dolorum optio corrupti cumque
           reiciendis accusantium voluptatibus!
         </p>
-        <button className="bg-white/80 hover:bg-white/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
-          <BsPlayFill className="w-6 h-6 mr-1"/> <span className="text-xl">Play</span>
-        </button>
+        <Link to="/watch" state={{data: episode}}>
+          <button className="bg-white/80 hover:bg-white/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
+            <BsPlayFill className="w-6 h-6 mr-1" />{" "}
+            <span className="text-xl">Play</span>
+          </button>
+        </Link>
       </div>
     </div>
   );
