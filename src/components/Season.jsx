@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Episode from "./Episode";
 
-const Season = ({ seasonId }) => {
+const Season = ({ seasonId, serie }) => {
   const [season, setSeason] = useState({});
   useEffect(() => {
     const getSeasonInfo = async () => {
@@ -37,7 +37,7 @@ const Season = ({ seasonId }) => {
       </div>
       <div className="flex flex-col space-y-4 justify-center items-center pb-4">
       {season.episodes?.map((ep) => (
-        <Episode episodeId={ep} />
+        <Episode episodeId={ep} serie={serie} />
       ))}
       </div>
     </div>
