@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ menu, activeMenu }) => {
   return (
-    <div className="h-16 w-screen bg-black flex flex-row items-center justify-between px-12">
+    <div className="h-16 w-screen bg-black flex flex-row items-center justify-between px-12 fixed z-50">
       <div className="flex flex-row justify-center items-center">
         <img
           src="https://api-doc.pumpum.info/slate/img/logo.png"

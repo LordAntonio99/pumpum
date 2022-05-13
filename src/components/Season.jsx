@@ -32,7 +32,7 @@ const Season = ({ seasonId, serie }) => {
           Season {season.number}
         </h1>
         <h1 className="text-white/60 font-semibold text-2xl px-8 py-4">
-          {season.numberOfEpisodes}eps.
+          {season?.episodes?.length} / {season.numberOfEpisodes}eps.
         </h1>
       </div>
       <div className="flex flex-col space-y-4 justify-center items-center pb-4">

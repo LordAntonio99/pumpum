@@ -27,22 +27,33 @@ const Episode = ({ episodeId, serie, season }) => {
   }, [episodeId]);
   return (
     <div className="w-[96%] h-auto rounded-lg bg-zinc-900 overflow-hidden hover:scale-105 hover:bg-zinc-800 transition-all duration-150 flex flex-row">
-      <img
-        src={
-          episode.imgSm
-            ? episode.imgSm
-            : "https://quevedoes.files.wordpress.com/2019/08/img_8392.gif"
-        }
-        alt={episode.title ? episode.title : "Loading..."}
-        className="w-[20%] md:w-64 object-cover"
-      />
+      <Link
+        to={"/watch"}
+        state={{ data: episode, type: "serie", serie: serie, season: season }}
+        className="w-full h-full"
+      >
+        <img
+          src={
+            episode.imgSm
+              ? episode.imgSm
+              : "https://quevedoes.files.wordpress.com/2019/08/img_8392.gif"
+          }
+          alt={episode.title ? episode.title : "Loading..."}
+          className="w-full h-96 md:h-64 object-cover hover:scale-105 transition-all duration-150"
+        />
+      </Link>
       <div className="flex flex-col mx-4 my-4">
         <h1 className="text-white text-xl">
           {episode.episode ? (
-            episode.episode + ". " + episode.title
+            episode.episode +
+            ". " +
+            episode.title
           ) : (
             <div className="w-full h-6 bg-zinc-800 animation-pulse"></div>
           )}
+        </h1>
+        <h1 className="text-white text-sm">
+          {episode.duration}min.
         </h1>
         <p className="text-white mb-4">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur

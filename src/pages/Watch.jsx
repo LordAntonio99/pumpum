@@ -8,6 +8,7 @@ const Watch = () => {
   const data = location.state.data;
   const type = location.state.type;
   const serie = location.state.serie;
+  const movie = location.state.movie;
   const season = location.state.season;
   console.log(season);
   return (
@@ -26,12 +27,20 @@ const Watch = () => {
           </Link>
         </div>
       ) : (
-        <div className="absolute top-0 mt-4 mx-auto">
-          <h1 className="text-white text-2xl">{data.title}</h1>
+        <div className="absolute top-0 mt-4 mx-auto w-full h-[10%] flex flex-row justify-between px-8 items-center z-10">
+        <Link to="/movieInfo" state={{ movie: data }}>
+          <BsArrowLeft className="text-white h-8 w-9 text-left" />
+        </Link>
+        <div className="flex flex-col justify-center items-center w-full">
+          <span className="text-white text-2xl">{data.title}</span>
         </div>
+        <Link to="/" className="hover:scale-125 transition-all duration-150">
+          <AiFillHome className="text-white h-8 w-9" />
+        </Link>
+      </div>
       )}
       <video
-        src={data.video}
+        src={data?.video}
         controls
         onVolumeChange={() => console.log("hola")}
         autoPlay
