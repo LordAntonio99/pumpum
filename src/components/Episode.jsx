@@ -26,7 +26,7 @@ const Episode = ({ episodeId, serie, season }) => {
     getEpisodeInfo();
   }, [episodeId]);
   return (
-    <div className="w-[96%] h-auto rounded-lg bg-zinc-900 overflow-hidden hover:scale-105 hover:bg-zinc-800 transition-all duration-150 flex flex-row">
+    <div className="w-[96%] h-auto rounded-lg bg-zinc-900 overflow-hidden hover:scale-105 hover:bg-zinc-800 transition-all duration-150 flex flex-row justify-between">
       <Link
         to={"/watch"}
         state={{ data: episode, type: "serie", serie: serie, season: season }}
@@ -39,27 +39,22 @@ const Episode = ({ episodeId, serie, season }) => {
               : "https://quevedoes.files.wordpress.com/2019/08/img_8392.gif"
           }
           alt={episode.title ? episode.title : "Loading..."}
-          className="w-full h-96 md:h-64 object-cover hover:scale-105 transition-all duration-150"
+          className="w-[100%] h-full md:h-64 object-cover hover:scale-105 transition-all duration-150"
         />
       </Link>
-      <div className="flex flex-col mx-4 my-4">
+      <div className="flex flex-col w-[200%] mx-4 my-4">
         <h1 className="text-white text-xl">
           {episode.episode ? (
-            episode.episode +
-            ". " +
-            episode.title
+            episode.episode + ". " + episode.title
           ) : (
             <div className="w-full h-6 bg-zinc-800 animation-pulse"></div>
           )}
         </h1>
-        <h1 className="text-white text-sm">
-          {episode.duration}min.
-        </h1>
-        <p className="text-white mb-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-          ea sequi ipsam asperiores, nihil dolor sapiente repellendus voluptatem
-          blanditiis tenetur autem, quos nam dolorum optio corrupti cumque
-          reiciendis accusantium voluptatibus!
+        <h1 className="text-white text-sm">{episode.duration}min.</h1>
+        <p className="text-white mb-4 max-h-28 overflow-y-scroll scrollbar-none">
+          {episode?.desc
+            ? episode.desc
+            : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur ea sequi ipsam asperiores, nihil dolor sapiente repellendus voluptatem blanditiis tenetur autem, quos nam dolorum optio corrupti cumque reiciendis accusantium voluptatibus!"}
         </p>
         <Link
           to="/watch"

@@ -14,7 +14,7 @@ const Watch = () => {
   return (
     <div className="h-screen w-screen bg-black relative">
       {type === "serie" ? (
-        <div className="absolute top-0 mt-4 mx-auto w-full h-[10%] flex flex-row justify-between px-8 items-center z-10">
+        <div className="absolute top-0 pt-4 bg-gradient-to-b from-black to-black/0 mx-auto w-full h-[10%] flex flex-row justify-between px-8 items-center z-10">
           <Link to="/infoAnime" state={{ serie: serie }}>
             <BsArrowLeft className="text-white h-8 w-9 text-left" />
           </Link>
@@ -27,7 +27,7 @@ const Watch = () => {
           </Link>
         </div>
       ) : (
-        <div className="absolute top-0 mt-4 mx-auto w-full h-[10%] flex flex-row justify-between px-8 items-center z-10">
+        <div className="absolute top-0 bg-gradient-to-b from-black to-black/0 pt-4 mx-auto w-full h-[10%] flex flex-row justify-between px-8 items-center z-10">
         <Link to="/movieInfo" state={{ movie: data }}>
           <BsArrowLeft className="text-white h-8 w-9 text-left" />
         </Link>
