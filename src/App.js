@@ -9,6 +9,7 @@ import Animes from "./pages/Animes";
 import InfoAnime from "./pages/InfoAnime"
 import Watch from "./pages/Watch"
 import InfoMovie from "./pages/InfoMovie";
+import Settings from "./pages/Settings";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/movieInfo" element={<InfoMovie />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/watch" element={<Watch />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

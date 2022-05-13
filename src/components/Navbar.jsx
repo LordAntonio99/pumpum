@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../authContext/AuthContext";
 
 const Navbar = ({ menu, activeMenu }) => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="h-16 w-screen bg-black flex flex-row items-center justify-between px-12 fixed z-50">
       <div className="flex flex-row justify-center items-center">
@@ -21,20 +23,36 @@ const Navbar = ({ menu, activeMenu }) => {
             </Link>
 
             <Link to="/animes">
-              <h1 className={menu === "animes" ? "menu_text--active" : "menu_text"}>Animes</h1>
+              <h1
+                className={
+                  menu === "animes" ? "menu_text--active" : "menu_text"
+                }
+              >
+                Animes
+              </h1>
             </Link>
             <Link to="/movies">
-              <h1 className={menu === "movies" ? "menu_text--active" : "menu_text"}>Movies</h1>
+              <h1
+                className={
+                  menu === "movies" ? "menu_text--active" : "menu_text"
+                }
+              >
+                Movies
+              </h1>
             </Link>
           </div>
         )}
       </div>
       <div>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-          className="h-6 w-6"
-          alt=""
-        />
+        <Link to="/settings">
+          <button>
+            <img
+              src={user.profilePic ? user.profilePic : "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"}
+              className="h-8 w-8 rounded-lg object-cover cursor-pointer"
+              alt=""
+            />
+          </button>
+        </Link>
       </div>
     </div>
   );

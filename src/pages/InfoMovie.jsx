@@ -26,14 +26,19 @@ const InfoMovie = () => {
         </h1>
         <h1 className="text-xl text-white mx-10 mt-4">{movie.desc}</h1>
       </div>
-      <Link to={"/watch"} state={{ data: movie, type: "movie", info: movie }}>
-        <button className="flex flex-row items-center justify-center text-2xl px-8 py-2 ml-10 my-8 bg-white/60 hover:bg-white hover:scale-110 transition-all duration-150 rounded-lg">
-          <BsPlayFill className="h-5 w-5 mr-1" />
-          <span className="font-semibold transition-all duration-100">
-            Play
-          </span>
+      <div className="flex flex-row justify-start items-center">
+        <Link to={"/watch"} state={{ data: movie, type: "movie", info: movie }}>
+          <button className="flex flex-row items-center justify-center text-2xl px-8 py-2 ml-10 my-8 bg-white/60 hover:bg-white hover:scale-110 transition-all duration-150 rounded-lg">
+            <BsPlayFill className="h-5 w-5 mr-1" />
+            <span className="font-semibold transition-all duration-100">
+              Play
+            </span>
+          </button>
+        </Link>
+        <button className="bg-green-300/80 hover:bg-green-300/100 text-2xl ml-4 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold">
+          <span className="text-xl">Seen</span>
         </button>
-      </Link>
+      </div>
       <Footer />
     </div>
   );

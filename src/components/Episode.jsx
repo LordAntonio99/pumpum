@@ -56,15 +56,25 @@ const Episode = ({ episodeId, serie, season }) => {
             ? episode.desc
             : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur ea sequi ipsam asperiores, nihil dolor sapiente repellendus voluptatem blanditiis tenetur autem, quos nam dolorum optio corrupti cumque reiciendis accusantium voluptatibus!"}
         </p>
-        <Link
-          to="/watch"
-          state={{ data: episode, type: "serie", serie: serie, season: season }}
-        >
-          <button className="bg-white/80 hover:bg-white/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
-            <BsPlayFill className="w-6 h-6 mr-1" />{" "}
-            <span className="text-xl">Play</span>
+        <div className="flex flex-row justify-start items-center space-x-4">
+          <Link
+            to="/watch"
+            state={{
+              data: episode,
+              type: "serie",
+              serie: serie,
+              season: season,
+            }}
+          >
+            <button className="bg-white/80 hover:bg-white/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
+              <BsPlayFill className="w-6 h-6 mr-1" />{" "}
+              <span className="text-xl">Play</span>
+            </button>
+          </Link>
+          <button className="bg-green-300/80 hover:bg-green-300/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
+            <span className="text-xl">Seen</span>
           </button>
-        </Link>
+        </div>
       </div>
     </div>
   );
