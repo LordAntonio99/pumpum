@@ -48,7 +48,7 @@ const Navbar = ({ menu, activeMenu }) => {
           <button>
             <img
               src={user.profilePic ? user.profilePic : "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"}
-              className="h-8 w-8 rounded-lg object-cover cursor-pointer"
+              className="h-8 w-8 rounded-lg object-cover cursor-pointer hover:scale-110 transition-all duration-150"
               alt=""
             />
           </button>

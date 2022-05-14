@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ValidateEmail from "../tools/ValidateEmail";
 import ValidateUsername from "../tools/ValidateUsername";
+import { createAvatar } from "@dicebear/avatars";
+import * as style from "@dicebear/adventurer-neutral";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -25,11 +27,14 @@ const Register = () => {
     }
 
     try {
+      const profilePic = `https://api.multiavatar.com/${username}.png`
       await axios.post("https://api1.pumpum.info/api/auth/register", {
         email,
         password: password1,
         username,
+        profilePic
       });
+      alert("Registrado")
       window.location.replace("/");
     } catch (err) {
       console.log(err);
@@ -45,7 +50,11 @@ const Register = () => {
       />
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-96 bg-white/60 shadow-xl shadow-black/40 rounded-lg p-8">
         <div className="flex flex-col items-center justify-center">
-          <img src="https://api-doc.pumpum.info/slate/img/logo.png" alt="Pumpum logo" className="animate-bounce"/>
+          <img
+            src="https://api-doc.pumpum.info/slate/img/logo.png"
+            alt="Pumpum logo"
+            className="animate-bounce"
+          />
           <h1 className="text-xl mb-4">Create a new account</h1>
           <input
             type="text"

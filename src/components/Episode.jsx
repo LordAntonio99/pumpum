@@ -71,9 +71,6 @@ const Episode = ({ episodeId, serie, season }) => {
               <span className="text-xl">Play</span>
             </button>
           </Link>
-          <button className="bg-green-300/80 hover:bg-green-300/100 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold flex items-center justify-center">
-            <span className="text-xl">Seen</span>
-          </button>
         </div>
       </div>
     </div>

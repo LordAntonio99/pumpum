@@ -35,9 +35,6 @@ const InfoMovie = () => {
             </span>
           </button>
         </Link>
-        <button className="bg-green-300/80 hover:bg-green-300/100 text-2xl ml-4 rounded-lg w-28 py-2 hover:scale-110 transition-all duration-150 font-bold">
-          <span className="text-xl">Seen</span>
-        </button>
       </div>
       <Footer />
     </div>
