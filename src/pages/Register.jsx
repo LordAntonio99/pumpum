@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ValidateEmail from "../tools/ValidateEmail";
 import ValidateUsername from "../tools/ValidateUsername";
-import { createAvatar } from "@dicebear/avatars";
-import * as style from "@dicebear/adventurer-neutral";
 
 const Register = () => {
   const [email, setEmail] = useState("");
