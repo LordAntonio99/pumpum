@@ -84,10 +84,10 @@ const Register = () => {
           >
             Sign up!
           </button>
-          <h1 className="w-64 text-right text-sm">New here?</h1>
+          <h1 className="w-64 text-right text-sm">Already registered?</h1>
           <Link to="/">
             <h1 className="w-64 text-right text-sm font-semibold text-red-600 hover:scale-110 transition-all duration-150">
-              Create an account for free now!
+              Login now with your account!
             </h1>
           </Link>
         </div>
